@@ -13,51 +13,64 @@ A napari plugin for analyzing mask density in regions of interest
 
 ----------------------------------
 
-This [napari] plugin was generated with [copier] using the [napari-plugin-template].
-
-<!--
-Don't miss the full getting started guide to set up your new package:
-https://github.com/napari/napari-plugin-template#getting-started
-
-and review the napari docs for plugin developers:
-https://napari.org/stable/plugins/index.html
--->
-
 ## Installation
 
 You can install `napari-mask-density` via [pip]:
 
     pip install napari-mask-density
 
+## Description
 
+`napari-mask-density` is a plugin for the [napari] image viewer that allows users to analyze the density of objects within selected regions of interest (ROIs). This is particularly useful for cell counting, particle analysis, and other applications where quantifying the distribution of segmented objects is important.
 
+## Features
+
+- **Select multiple mask layers**: Analyze multiple segmentation masks simultaneously.
+- **Define custom regions of interest**: Draw rectangular ROIs to specify areas for analysis.
+- **Microns-per-pixel calibration**: Convert measurements to real-world units.
+- **Density calculation**: Calculate and display object density (objects per μm²).
+- **Export to CSV**: Save analysis results for further processing or reporting.
+
+## Usage
+
+1. **Start napari** and load your images and segmentation masks
+2. **Open the plugin**: Find "Mask Density" in the Plugins menu
+3. **Set the microns-per-pixel value** for accurate spatial measurements
+4. **Select mask layer(s)** from the list that you want to analyze
+5. **Create a rectangular ROI** by clicking the "Add Selection ROI" button and drawing on the image
+6. **Analyze** by clicking the "Analyze Selected Region" button
+7. **View results** in the plugin panel
+8. **Export results** to CSV for further analysis
+
+## Results
+
+For each selected mask layer within the ROI, the plugin calculates and displays:
+
+- Number of masks (objects) detected
+- Area of the region in pixels and μm²
+- Density of objects per μm²
+
+## Requirements
+
+- napari
+- numpy
+- pandas
+- scikit-image
 
 ## Contributing
 
-Contributions are very welcome. Tests can be run with [tox], please ensure
-the coverage at least stays the same before you submit a pull request.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
 Distributed under the terms of the [BSD-3] license,
-"napari-mask-density" is free and open source software
+"napari-mask-density" is free and open source software.
 
 ## Issues
 
 If you encounter any problems, please [file an issue] along with a detailed description.
 
 [napari]: https://github.com/napari/napari
-[copier]: https://copier.readthedocs.io/en/stable/
-[@napari]: https://github.com/napari
-[MIT]: http://opensource.org/licenses/MIT
-[BSD-3]: http://opensource.org/licenses/BSD-3-Clause
-[GNU GPL v3.0]: http://www.gnu.org/licenses/gpl-3.0.txt
-[GNU LGPL v3.0]: http://www.gnu.org/licenses/lgpl-3.0.txt
-[Apache Software License 2.0]: http://www.apache.org/licenses/LICENSE-2.0
-[Mozilla Public License 2.0]: https://www.mozilla.org/media/MPL/2.0/index.txt
-[napari-plugin-template]: https://github.com/napari/napari-plugin-template
-
-[napari]: https://github.com/napari/napari
-[tox]: https://tox.readthedocs.io/en/latest/
 [pip]: https://pypi.org/project/pip/
-[PyPI]: https://pypi.org/
+[BSD-3]: http://opensource.org/licenses/BSD-3-Clause
+[file an issue]: https://github.com/kuang-da/napari-mask-density/issues
